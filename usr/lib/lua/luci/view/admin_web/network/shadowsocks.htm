@@ -6,13 +6,12 @@
 ]]--
 
 local ver  = require "luci.version"
-local adv_menu = luci.util.get_adv_menu()
+-- local adv_menu = luci.util.get_adv_menu()
 local request_uri = luci.http.getenv("REQUEST_URI")
 %>
 <head>
 <title>HiWiFi 路由器</title>
-<link rel="stylesheet" href="<%=resource%>/web/css/style.css?v=<%=ver.svnRevNum%>" type="text/css"/>
-<script type="text/javascript" src="<%=resource%>/web/js/jquery-1.8.1.min.js?v=<%=ver.svnRevNum%>"></script>
+<script type="text/javascript" src="<%=resource%>/v2/js/boot_loader/jquery.min.js?v=<%=ver.svnRevNum%>"></script>
 </head>
 
 <style type="text/css">

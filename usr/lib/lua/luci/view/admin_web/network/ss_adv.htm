@@ -6,12 +6,11 @@
 --]]
 
 local ver  = require "luci.version"
-local adv_menu = luci.util.get_adv_menu()
+--local adv_menu = luci.util.get_adv_menu()
 local request_uri = luci.http.getenv("REQUEST_URI")
 %>
 <head>
-<link rel="stylesheet" href="<%=resource%>/web/css/style.css?v=<%=ver.svnRevNum%>" type="text/css"/>
-<script type="text/javascript" src="<%=resource%>/web/js/jquery-1.8.1.min.js?v=<%=ver.svnRevNum%>"></script>
+<script type="text/javascript" src="<%=resource%>/v2/js/boot_loader/jquery.min.js?v=<%=ver.svnRevNum%>"></script>
 </head>
 
 <div id="ss_adv" style="display: none;">
@@ -57,7 +56,12 @@ $(function(){
 	{ 
 		$("#ss_adv_submit_btn").attr("disabled",false);
 	 	if (rsp.code == 0){
-	 		$("textarea[name='urls']").val(rsp.urls.toString().replace(/,/g, "\r\n"));
+			var urls = '';
+			if (rsp.urls) {
+				urls = rsp.urls.toString();
+			}
+
+			$("textarea[name='urls']").val(urls.replace(/,/g, "\r\n"));
 	 	}
 	})
 

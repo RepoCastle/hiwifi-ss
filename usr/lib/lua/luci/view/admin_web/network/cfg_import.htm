@@ -4,9 +4,9 @@ local request_uri = luci.http.getenv("REQUEST_URI")
 local step = 1
 %>
 <head>
-<link rel="stylesheet" href="<%=resource%>/web/css/style.css?v=<%=ver.svnRevNum%>" type="text/css"/>
-<script type="text/javascript" src="<%=resource%>/web/js/jquery-1.8.1.min.js?v=<%=ver.svnRevNum%>"></script>
-<script type="text/javascript" src="<%=resource%>/validators.min.js?v=<%=ver.svnRevNum%>"></script>
+<script type="text/javascript" src="<%=resource%>/v2/js/boot_loader/jquery.min.js?v=<%=ver.svnRevNum%>"></script>
+<script type="text/javascript" src="<%=resource%>/v2/js/lib/jquery.validate.js?v=<%=ver.svnRevNum%>"></script>
+<script type="text/javascript" src="<%=resource%>/v2/js/lib/jquery.validate.config.js?v=<%=ver.svnRevNum%>"></script>
 </head>
 
 <div id="ss_cfg_import" style="display: none;">
